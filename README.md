@@ -24,3 +24,7 @@ npm start
 ### `npm start`
 
 If the application does not open automatically in your browser of choice, navigate to [http://localhost:3000](http://localhost:3000) to view it.
+
+## Author
+
+- [Sam Lea](https://github.com/samuellea/)
