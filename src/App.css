@@ -1,22 +1,114 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to top left, rgb(111, 100, 124),rgb(51, 99, 189));
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }
 
-.App-logo {
-  height: 40vmin;
+.calculator-container {
+  background-color: white;
+  width: 350px;
+  height: 600px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.display {
+  background-image: linear-gradient(to bottom right, #5A84F2,#3C5AF0);
+  height: 30%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end;
+  font-weight: 100;
+  padding: 0% 5%;
+  margin: 0%;
+
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  position: relative
+}
+
+.main-display {
+  /* font-size: 48px; */
+  color: white;
+
+  font-size: 3.5vw;
+  position: absolute;
+  /* background-color: red; */
+  width: 90%;
+  text-align: right;
+  /* display: flex;
+  flex-direction: column;
+  min-height: 100vh; */
+  overflow-wrap: break-word;
+}
+
+.sub-display {
+  color: rgb(209, 209, 209);
+  font-size: 24px;
+  position: absolute;
+  top: 75%;
+  /* color: rgb(145, 145, 145); */
+}
+
+.buttons {
+  height: 70%;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  grid-template-areas: "ac plus-minus perecent plus" "one two three minus" "four five six multiply" "seven eight nine divide" "zero decimal equals equals"
+}
+
+button {
+  background-color: #394867;
+  color: #8097B3;
+  font-size: 30px;
+  font-weight: 200;
+  border: 1px solid #2e3a53;
+}
+
+button:hover {
+  background-color:  #34435f;
+}
+
+button:active {
+  background-color:  #313e58;
+}
+
+button:focus { 
+  outline: none;
+}
+
+.bold {
+  font-weight: 400;
+}
+
+.operator {
+  font-weight: 500;
+  color: rgb(93, 114, 209);
+}
+
+#equals {
+  grid-area: equals;
+  background-color: #4161E8;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+@keyframes flash {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+}
+
+.flash {
+  animation-name: flash;
 }
